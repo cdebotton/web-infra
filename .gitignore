@@ -1,0 +1,11 @@
+node_modules
+.DS_Store
+.dev.vars
+.env
+._*
+thumbs.db
+.wrangler
+.claude
+.cloudflare
+.storybook
+.chrome-debug

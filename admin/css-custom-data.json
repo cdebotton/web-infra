@@ -1,0 +1,44 @@
+{
+  "properties": [
+    {
+      "name": "--type-scale-xs",
+      "description": "clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem)"
+    },
+    {
+      "name": "--type-scale-sm",
+      "description": "clamp(0.875rem, 0.8rem + 0.375vw, 1rem)"
+    },
+    {
+      "name": "--type-scale-base",
+      "description": "clamp(1rem, 0.9rem + 0.5vw, 1.125rem)"
+    },
+    {
+      "name": "--type-scale-md",
+      "description": "clamp(1.125rem, 1rem + 0.625vw, 1.333rem)"
+    },
+    {
+      "name": "--type-scale-lg",
+      "description": "clamp(1.333rem, 1.2rem + 0.665vw, 1.5rem)"
+    },
+    {
+      "name": "--type-scale-xl",
+      "description": "clamp(1.5rem, 1.35rem + 0.75vw, 1.777rem)"
+    },
+    {
+      "name": "--type-scale-2xl",
+      "description": "clamp(1.777rem, 1.6rem + 0.885vw, 2rem)"
+    },
+    {
+      "name": "--type-scale-3xl",
+      "description": "clamp(2rem, 1.8rem + 1vw, 2.369rem)"
+    },
+    {
+      "name": "--type-scale-4xl",
+      "description": "clamp(2.369rem, 2.1rem + 1.345vw, 2.827rem)"
+    },
+    {
+      "name": "--type-scale-5xl",
+      "description": "clamp(2.827rem, 2.5rem + 1.635vw, 3.157rem)"
+    }
+  ]
+}

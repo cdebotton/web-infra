@@ -1,0 +1,11 @@
+packages:
+  - admin
+  - services/*
+  - packages/*
+
+onlyBuiltDependencies:
+  - "@parcel/watcher"
+  - "@toolwind/anchors"
+  - esbuild
+  - sharp
+  - workerd

@@ -1,0 +1,30 @@
+.cloudfare
+test-results
+node_modules
+
+css-custom-properties.json
+
+# Output
+.output
+.vercel
+.netlify
+.wrangler
+/.svelte-kit
+/build
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.*
+!.env.example
+!.env.test
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+*storybook.log
+storybook-static

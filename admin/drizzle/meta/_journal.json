@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1761115122034,
+      "tag": "0000_talented_paladin",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1761631352811,
+      "tag": "0001_optimal_reaper",
+      "breakpoints": true
+    }
+  ]
+}

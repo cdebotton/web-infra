@@ -1,0 +1,18 @@
+{
+	"name": "images",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"deploy": "wrangler deploy",
+		"dev": "wrangler dev --name=images --persist-to=../../.wrangler/state",
+		"start": "wrangler dev",
+		"test": "vitest",
+		"cf-typegen": "wrangler types"
+	},
+	"devDependencies": {
+		"@cloudflare/vitest-pool-workers": "^0.10.2",
+		"typescript": "^5.5.2",
+		"vitest": "~4.0.5",
+		"wrangler": "^4.45.2"
+	}
+}

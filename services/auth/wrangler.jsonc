@@ -1,0 +1,36 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "auth",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-10-11",
+	"compatibility_flags": ["nodejs_compat"],
+	"kv_namespaces": [
+		{
+			"binding": "REFRESH_TOKENS",
+			"id": "9046d4a6222c45d49f2e1be0a3aa8857",
+		},
+		{
+			"binding": "USER_TOKENS",
+			"id": "f661f649ab0c45bcb9ea60568fa0cd93",
+		},
+		{
+			"binding": "TOKEN_FAMILIES",
+			"id": "cee82c0dd84a427eb61b030db4cea616",
+		},
+	],
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "auth",
+			"database_id": "23dbba99-a743-46be-b2bc-699dbb31a069",
+			"migrations_dir": "./drizzle",
+		},
+	],
+	"secrets_store_secrets": [
+		{
+			"binding": "AUTH_JWT_SECRET",
+			"store_id": "be063ad20bfb49e2ab8a0e1da2bc6921",
+			"secret_name": "AUTH_JWT_SECRET",
+		},
+	],
+}

@@ -1,0 +1,29 @@
+{
+  "configurations": [
+    {
+      "name": "auth",
+      "type": "pwa-node",
+      "request": "attach",
+      "port": 9229,
+      "cwd": "${workspaceFolder}/services/auth",
+      "resolveSourceMapLocations": null,
+      "attachExistingChildren": false,
+      "autoAttachChildProcesses": false,
+      "sourceMaps": true
+    },
+    {
+      "name": "admin",
+      "type": "pwa-node",
+      "request": "attach",
+      "port": 9230,
+      "cwd": "${workspaceFolder}/admin/src",
+      "sourceMaps": true,
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/**",
+        "!**/node_modules/**"
+      ],
+      "cwd": "${workspaceFolder}/src",
+      "skipFiles": ["${workspaceFolder}/node_modules/**/*.js"]
+    }
+  ]
+}

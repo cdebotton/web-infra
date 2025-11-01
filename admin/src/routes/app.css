@@ -1,0 +1,27 @@
+@import '$lib/assets/reset.css';
+
+:root {
+	color-scheme: light dark;
+
+	--type-scale-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+	--type-scale-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+	--type-scale-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+	--type-scale-md: clamp(1.125rem, 1rem + 0.625vw, 1.333rem);
+	--type-scale-lg: clamp(1.333rem, 1.2rem + 0.665vw, 1.5rem);
+	--type-scale-xl: clamp(1.5rem, 1.35rem + 0.75vw, 1.777rem);
+	--type-scale-2xl: clamp(1.777rem, 1.6rem + 0.885vw, 2rem);
+	--type-scale-3xl: clamp(2rem, 1.8rem + 1vw, 2.369rem);
+	--type-scale-4xl: clamp(2.369rem, 2.1rem + 1.345vw, 2.827rem);
+	--type-scale-5xl: clamp(2.827rem, 2.5rem + 1.635vw, 3.157rem);
+
+	--color-background: light-dark(white, oklch(0.15 0.0075 240));
+	--color-surface: oklch(from var(--color-background) calc(l * 1.2) c h);
+	--color-text: light-dark(black, oklch(0.98 0.025 60));
+}
+
+nav {
+	a {
+		color: currentColor;
+		text-decoration: none
+	}
+}
