@@ -24,10 +24,11 @@ export const documents = sqliteTable(
 	'documents',
 	{
 		id: text('id').primaryKey().notNull(),
-		slug: text('slug').notNull(),
+		slug: text('slug').unique().notNull(),
 		userId: text('user_id')
 			.notNull()
 			.references(() => users.id),
+		publishDate: integer('publish_date', { mode: 'timestamp_ms' }),
 		createdAt: integer('created_at', { mode: 'timestamp_ms' })
 			.notNull()
 			.default(sql`(unixepoch() * 1000)`),
@@ -41,4 +42,19 @@ export const documents = sqliteTable(
 export type Document = InferSelectModel<typeof documents>;
 export type InsertDocument = InferInsertModel<typeof documents>;
 
-// Add document versions that refernece r2 key
+export const documentVersions = sqliteTable('document_versions', {
+	id: text('id').primaryKey().notNull(),
+	documentId: text('document_id')
+		.references(() => documents.id, { onDelete: 'cascade' })
+		.notNull(),
+	title: text('title').notNull(),
+	description: text('description').notNull(),
+	key: text('key').unique(),
+	createdAt: integer('created_at', { mode: 'timestamp_ms' })
+		.notNull()
+		.default(sql`(unixephic() * 1000)`),
+	updatedAt: integer('updated_at', { mode: 'timestamp_ms' })
+});
+
+export type DocumentVersion = InferSelectModel<typeof documentVersions>;
+export type InsertDocumentVersion = InferInsertModel<typeof documentVersions>;

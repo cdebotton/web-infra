@@ -15,6 +15,20 @@
       "when": 1761631352811,
       "tag": "0001_optimal_reaper",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1762208701576,
+      "tag": "0002_sloppy_violations",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1762208794217,
+      "tag": "0003_good_purifiers",
+      "breakpoints": true
     }
   ]
 }

@@ -18,13 +18,13 @@
 		"db:studio": "LOCAL_DB_PATH=$(find ../../.wrangler/state/v3/d1/miniflare-D1DatabaseObject -type f -name '*.sqlite' -print -quit) drizzle-kit studio"
 	},
 	"devDependencies": {
-		"@cloudflare/vitest-pool-workers": "^0.10.2",
+		"@cloudflare/vitest-pool-workers": "^0.10.5",
 		"@libsql/client": "^0.15.15",
-		"@types/node": "^24.9.2",
+		"@types/node": "^24.10.0",
 		"drizzle-kit": "^0.31.6",
 		"typescript": "^5.5.2",
-		"vitest": "~4.0.5",
-		"wrangler": "^4.45.2"
+		"vitest": "~4.0.8",
+		"wrangler": "^4.46.0"
 	},
 	"dependencies": {
 		"@cdb/jwt": "workspace:*",
