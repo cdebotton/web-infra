@@ -16,9 +16,15 @@
 
 		return page.url.pathname.startsWith(linkProps.href.toString());
 	});
+
+	// FIXME: There is a bug in svelte where preload data is triggering updates to the page rune.
+	// Remove this when fixed
+	const preload = 'false';
 </script>
 
-<a {...linkProps} aria-current={current ? 'page' : undefined}>{@render children?.()}</a>
+<a {...linkProps} data-sveltekit-preload-data={preload} aria-current={current ? 'page' : undefined}
+	>{@render children?.()}</a
+>
 
 <style>
 	a {
@@ -41,11 +47,37 @@
 				position: absolute;
 				right: 1rem;
 				display: block;
-				width: 0.3275rem;
+				width: 0.4275rem;
 				height: 1.25rem;
 				border-radius: 3px;
-				background-color: var(--color-mauve);
+				background-color: var(--color--indicator);
 				content: ' ';
+				view-transition-name: nav-link-active-indicator;
+			}
+
+			&:nth-child(1) {
+				--color--indicator: var(--color-lavender);
+			}
+			&:nth-child(2) {
+				--color--indicator: var(--color-mauve);
+			}
+			&:nth-child(3) {
+				--color--indicator: var(--color-pink);
+			}
+			&:nth-child(4) {
+				--color--indicator: var(--color-yellow);
+			}
+			&:nth-child(5) {
+				--color--indicator: var(--color-flamingo);
+			}
+			&:nth-child(6) {
+				--color--indicator: var(--color-maroon);
+			}
+			&:nth-child(7) {
+				--color--indicator: var(--color-red);
+			}
+			&:nth-child(8) {
+				--color--indicator: var(--color-peach);
 			}
 		}
 
