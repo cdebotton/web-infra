@@ -1,8 +1,8 @@
 @import '$lib/assets/reset.css';
 
+
 :root {
 	color-scheme: light dark;
-
 	--type-scale-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
 	--type-scale-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
 	--type-scale-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
@@ -13,15 +13,112 @@
 	--type-scale-3xl: clamp(2rem, 1.8rem + 1vw, 2.369rem);
 	--type-scale-4xl: clamp(2.369rem, 2.1rem + 1.345vw, 2.827rem);
 	--type-scale-5xl: clamp(2.827rem, 2.5rem + 1.635vw, 3.157rem);
+	
+  /* Latte (light) */
+  --latte-text: oklch(43.55% 0.0430 279.33);
+  --latte-subtext-1: oklch(49.20% 0.0385 279.30);
+  --latte-subtext-0: oklch(54.71% 0.0343 279.08);
+  --latte-overlay-2: oklch(60.09% 0.0305 278.69);
+  --latte-overlay-1: oklch(65.36% 0.0269 278.12);
+  --latte-overlay-0: oklch(70.77% 0.0237 274.60);
+  --latte-surface-2: oklch(75.84% 0.0205 273.15);
+  --latte-surface-1: oklch(80.83% 0.0174 271.20);
+  --latte-surface-0: oklch(85.75% 0.0145 268.48);
+  --latte-base: oklch(95.78% 0.0058 264.53);
+  --latte-mantle: oklch(93.35% 0.0087 264.52);
+  --latte-crust: oklch(90.60% 0.0117 264.51);
 
-	--color-background: light-dark(white, oklch(0.15 0.0075 240));
-	--color-surface: oklch(from var(--color-background) calc(l * 1.2) c h);
-	--color-text: light-dark(black, oklch(0.98 0.025 60));
+  --latte-rosewater: oklch(71.41% 0.1045 33.10);
+  --latte-flamingo: oklch(68.56% 0.1259 20.87);
+  --latte-pink: oklch(72.56% 0.1739 338.43);
+  --latte-mauve: oklch(55.47% 0.2503 297.02);
+  --latte-red: oklch(55.05% 0.2155 19.81);
+  --latte-maroon: oklch(62.52% 0.1967 20.27);
+  --latte-peach: oklch(69.20% 0.2041 42.43);
+  --latte-yellow: oklch(71.40% 0.1494 67.78);
+  --latte-green: oklch(62.50% 0.1772 140.44);
+  --latte-teal: oklch(60.23% 0.0981 201.10);
+  --latte-sky: oklch(68.20% 0.1448 235.38);
+  --latte-sapphire: oklch(64.77% 0.1068 212.89);
+  --latte-blue: oklch(55.86% 0.2255 262.09);
+  --latte-lavender: oklch(66.38% 0.1751 273.13);
+
+  /* Mocha (dark) */
+  --mocha-text: oklch(87.87% 0.0426 272.28);
+  --mocha-subtext-1: oklch(81.68% 0.0403 272.86);
+  --mocha-subtext-0: oklch(75.10% 0.0396 273.93);
+  --mocha-overlay-2: oklch(68.65% 0.0374 274.73);
+  --mocha-overlay-1: oklch(61.76% 0.0367 276.00);
+  --mocha-overlay-0: oklch(54.97% 0.0345 277.10);
+  --mocha-surface-2: oklch(47.65% 0.0340 278.64);
+  --mocha-surface-1: oklch(40.37% 0.0320 280.15);
+  --mocha-surface-0: oklch(32.40% 0.0319 281.98);
+  --mocha-base: oklch(24.29% 0.0304 283.91);
+  --mocha-mantle: oklch(21.55% 0.0254 284.06);
+  --mocha-crust: oklch(18.28% 0.0204 284.20);
+
+  --mocha-rosewater: oklch(92.26% 0.0238 30.49);
+  --mocha-flamingo: oklch(87.97% 0.0418 17.98);
+  --mocha-pink: oklch(87.00% 0.0752 336.30);
+  --mocha-mauve: oklch(78.71% 0.1187 304.77);
+  --mocha-red: oklch(75.56% 0.1297 2.76);
+  --mocha-maroon: oklch(78.21% 0.0903 8.85);
+  --mocha-peach: oklch(82.37% 0.1015 52.63);
+  --mocha-yellow: oklch(91.93% 0.0704 86.53);
+  --mocha-green: oklch(85.77% 0.1092 142.72);
+  --mocha-teal: oklch(85.85% 0.0792 182.75);
+  --mocha-sky: oklch(84.67% 0.0833 210.25);
+  --mocha-sapphire: oklch(79.06% 0.0965 228.65);
+  --mocha-blue: oklch(76.64% 0.1113 259.88);
+  --mocha-lavender: oklch(81.66% 0.0910 277.31);
+
+  /* Unified system-driven tokens (Latte in light, Mocha in dark) */
+  --color-text: light-dark(var(--latte-text), var(--mocha-text));
+  --color-subtext-1: light-dark(var(--latte-subtext-1), var(--mocha-subtext-1));
+  --color-subtext-0: light-dark(var(--latte-subtext-0), var(--mocha-subtext-0));
+
+  --color-overlay-2: light-dark(var(--latte-overlay-2), var(--mocha-overlay-2));
+  --color-overlay-1: light-dark(var(--latte-overlay-1), var(--mocha-overlay-1));
+  --color-overlay-0: light-dark(var(--latte-overlay-0), var(--mocha-overlay-0));
+
+  --color-surface-2: light-dark(var(--latte-surface-2), var(--mocha-surface-2));
+  --color-surface-1: light-dark(var(--latte-surface-1), var(--mocha-surface-1));
+  --color-surface-0: light-dark(var(--latte-surface-0), var(--mocha-surface-0));
+
+  --color-bg: light-dark(var(--latte-base), var(--mocha-base));
+  --color-bg-mantle: light-dark(var(--latte-mantle), var(--mocha-mantle));
+  --color-bg-crust: light-dark(var(--latte-crust), var(--mocha-crust));
+
+  --color-rosewater: light-dark(var(--latte-rosewater), var(--mocha-rosewater));
+  --color-flamingo: light-dark(var(--latte-flamingo), var(--mocha-flamingo));
+  --color-pink: light-dark(var(--latte-pink), var(--mocha-pink));
+  --color-mauve: light-dark(var(--latte-mauve), var(--mocha-mauve));
+  --color-red: light-dark(var(--latte-red), var(--mocha-red));
+  --color-maroon: light-dark(var(--latte-maroon), var(--mocha-maroon));
+  --color-peach: light-dark(var(--latte-peach), var(--mocha-peach));
+  --color-yellow: light-dark(var(--latte-yellow), var(--mocha-yellow));
+  --color-green: light-dark(var(--latte-green), var(--mocha-green));
+  --color-teal: light-dark(var(--latte-teal), var(--mocha-teal));
+  --color-sky: light-dark(var(--latte-sky), var(--mocha-sky));
+  --color-sapphire: light-dark(var(--latte-sapphire), var(--mocha-sapphire));
+  --color-blue: light-dark(var(--latte-blue), var(--mocha-blue));
+  --color-lavender: light-dark(var(--latte-lavender), var(--mocha-lavender));
+
+  /* Common UI aliases */
+  --color-border: var(--color-overlay-0);
+  --color-accent: var(--color-blue);
+  --color-accent-contrast: light-dark(oklch(100.00% 0.0000 89.88), oklch(17.73% 0.0341 269.56));
+}
+
+/* Example usage */
+body {
+  	background: var(--color-bg);
+  	color: var(--color-text);
 }
 
 nav {
 	a {
-		color: currentColor;
-		text-decoration: none
+		color: var(--color-lavender);
+		text-decoration: none;
 	}
 }
