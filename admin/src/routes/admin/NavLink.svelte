@@ -51,6 +51,7 @@
 				height: 1.25rem;
 				border-radius: 3px;
 				background-color: var(--color--indicator);
+				box-shadow: 0 0 7px 2px oklch(from var(--color--indicator) 0.8 c h / 0.6);
 				content: ' ';
 				view-transition-name: nav-link-active-indicator;
 			}

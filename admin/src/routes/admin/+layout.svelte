@@ -16,8 +16,6 @@
 	import NavLink from './NavLink.svelte';
 
 	import { onNavigate } from '$app/navigation';
-	import { resolve } from '$app/paths';
-	import { page } from '$app/state';
 
 	const { children } = $props();
 
@@ -77,6 +75,15 @@
 		padding-inline: 2rem;
 	}
 
+	@keyframes gradient-roll {
+		from {
+			background-position: -100dvw 0;
+		}
+		to {
+			background-position: 0 0;
+		}
+	}
+
 	header {
 		display: flex;
 		flex-flow: column;
@@ -88,7 +95,20 @@
 		h1 {
 			flex: 1;
 			margin: 0;
-			color: var(--color-maroon);
+			animation: gradient-roll 10s linear infinite alternate;
+			background-clip: text;
+			background-image: linear-gradient(
+				to right,
+				var(--color-teal),
+				var(--color-lavender),
+				var(--color-mauve),
+				var(--color-pink),
+				var(--color-maroon),
+				var(--color-peach)
+			);
+			background-repeat: no-repeat;
+			background-size: 200dvw 100dvh;
+			color: transparent;
 			font-size: var(--type-scale-xl);
 			font-weight: 900;
 			justify-self: center;
