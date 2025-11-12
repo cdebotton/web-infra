@@ -1,132 +1,62 @@
 <script lang="ts">
-	import { Marked } from 'marked';
-	import { addTokenPositions } from 'marked-token-position';
+	import { Editor } from '@tiptap/core';
+	import { StarterKit } from '@tiptap/starter-kit';
+	import {
+		TextB,
+		TextItalic,
+		TextStrikethrough,
+		TextUnderline,
+		TextAlignLeft,
+		TextAlignCenter,
+		TextAlignRight
+	} from 'phosphor-svelte';
+	import { onMount } from 'svelte';
 
-	import { o } from '../../../.svelte-kit/output/server/chunks';
+	let editorState = $state<{ editor: Editor | null }>({ editor: null });
+	let element: HTMLElement = $state()!;
 
-	interface Props {
-		value?: string;
-	}
-
-	let { value = $bindable('') }: Props = $props();
-	const marked = new Marked();
-
-	const tokens = $derived.by(() => {
-		let lexed = marked.lexer(value);
-		return addTokenPositions(lexed);
-	});
-
-	function setCaretPosition(element, offset) {
-		const range = document.createRange();
-		const selection = window.getSelection();
-
-		let charCount = 0;
-		let found = false;
-
-		function traverseNodes(node) {
-			if (found) return;
-
-			if (node.nodeType === Node.TEXT_NODE) {
-				const nextCharCount = charCount + node.length;
-				if (offset >= charCount && offset <= nextCharCount) {
-					range.setStart(node, offset - charCount);
-					range.collapse(true);
-					found = true;
-					return;
-				}
-				charCount = nextCharCount;
-			} else {
-				for (let i = 0; i < node.childNodes.length; i++) {
-					traverseNodes(node.childNodes[i]);
-					if (found) return;
-				}
+	onMount(() => {
+		editorState.editor = new Editor({
+			element,
+			extensions: [StarterKit],
+			onTransaction: ({ editor }) => {
+				editorState = { editor };
 			}
-		}
+		});
 
-		traverseNodes(element);
-
-		if (found) {
-			selection.removeAllRanges();
-			selection.addRange(range);
-		}
-	}
-	function renderMarkdown(node: HTMLElement) {
-		let html = '';
-		const position = getCaretPosition(node);
-		for (let token of tokens) {
-			html += renderToken(token);
-		}
-
-		node.innerHTML = html;
-		setCaretPosition(node, position);
-	}
-	interface Position {
-		offset: number;
-		line: number;
-		column: number;
-	}
-
-	interface TokenWithPosition {
-		depth: number;
-		raw: string;
-		text: string;
-		type: string;
-		tokens: Array<TokenWithPosition>;
-		position: {
-			start: Position;
-			end: Position;
-			lines: Array<{ start: Position; end: Position }>;
+		return () => {
+			editorState.editor?.destroy();
 		};
-	}
-	function getCaretPosition(element) {
-		const selection = window.getSelection();
-		if (selection.rangeCount === 0) return 0;
-
-		const range = selection.getRangeAt(0);
-		const preCaretRange = range.cloneRange();
-		preCaretRange.selectNodeContents(element);
-		preCaretRange.setEnd(range.endContainer, range.endOffset);
-
-		return preCaretRange.toString().length;
-	}
-	function renderToken(token: TokenWithPosition) {
-		const fragment = document.createDocumentFragment();
-		let element: Node;
-		switch (token.type) {
-			case 'heading':
-				element = document.createElement('h1');
-				element.innerHTML = token.raw;
-				break;
-			case 'paragraph':
-				element = document.createElement('p');
-				element.innerHTML = token.raw;
-				break;
-			case 'space':
-				element = document.createElement('br');
-				break;
-			case 'text':
-				element = document.createTextNode(token.raw);
-				break;
-			default:
-				console.log(token);
-				return;
-		}
-		fragment.appendChild(element);
-
-		const div = document.createElement('div');
-		div.appendChild(fragment);
-
-		return div.innerHTML;
-	}
+	});
 </script>
 
-<div {@attach renderMarkdown} bind:innerText={value} contenteditable="plaintext-only"></div>
+<div class="app">
+	{#if editorState.editor}
+		<div class="controls">
+			<!-- Text-->
+			<button><TextB /></button>
+			<button><TextItalic /></button>
+			<button><TextUnderline /></button>
+			<button><TextStrikethrough /></button>
+			<!-- Align -->
+			<button><TextAlignLeft /></button>
+			<button><TextAlignCenter /></button>
+			<button><TextAlignRight /></button>
+		</div>
+	{/if}
+	<div bind:this={element}></div>
+</div>
 
 <style>
-	div {
-		overflow: hidden;
-		height: 100%;
-		padding: 1rem;
-		background-color: var(--color-surface-0);
+	.app {
+		position: relative;
+
+		:global .tiptap {
+			min-height: 200px;
+			border-radius: 5px;
+			background-color: var(--color-surface-0);
+			padding-block: 1rem;
+			padding-inline: 1.5rem;
+		}
 	}
 </style>
