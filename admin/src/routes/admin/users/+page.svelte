@@ -9,7 +9,7 @@
 <ul>
 	{#each await getUsers() as user (user.id)}
 		<li>
-			<a href={resolve('/admin/users/{user.id}')}>{user.email}</a>
+			<a href={resolve(`/admin/users/${user.id}`)}>{user.email}</a>
 		</li>
 	{/each}
 </ul>

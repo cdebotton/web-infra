@@ -117,21 +117,21 @@
 		}
 
 		.avatar {
-			display: inline-block;
+			display: block;
 			width: 100%;
 			border: 2px solid var(--color-maroon);
 			border-radius: 9999px;
 			anchor-name: --context-anchor;
-			aspect-ratio: 1;
+			aspect-ratio: 1 / 1;
 			background-image: url('https://picsum.photos/64/64');
 			background-size: cover;
 		}
 
 		[role='menu'] {
 			position: fixed;
-			bottom: anchor(bottom);
-			left: calc(anchor(right) + 1rem);
 			background-color: white;
+			inset-block-start: calc(anchor(start) + 10px);
+			inset-inline-start: calc(anchor(end) + 0.5rem);
 			position-anchor: --context-anchor;
 		}
 	}

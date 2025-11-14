@@ -156,10 +156,12 @@
 		height: 1.5rem;
 		border: none;
 		border-radius: 5px;
+		background-color: var(--color-surface-0);
 		cursor: pointer;
 		padding-inline: 0.5rem;
 		&.active {
-			background-color: black;
+			background-color: var(--color-maroon);
+			color: var(--color-text);
 		}
 	}
 </style>

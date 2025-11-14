@@ -42,6 +42,10 @@
 		{
 			"bucket_name": "documents",
 			"binding": "DOCUMENTS_BUCKET"
+		},
+		{
+			"bucket_name": "avatars",
+			"binding": "AVATARS_BUCKET"
 		}
 	]
 }
