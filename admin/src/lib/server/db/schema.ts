@@ -58,3 +58,14 @@ export const documentVersions = sqliteTable('document_versions', {
 
 export type DocumentVersion = InferSelectModel<typeof documentVersions>;
 export type InsertDocumentVersion = InferInsertModel<typeof documentVersions>;
+
+export const assets = sqliteTable('assets', {
+	id: text('id').primaryKey().notNull(),
+	key: text('key').unique().notNull(),
+	mimeType: text('mime_type').notNull(),
+	fileSize: integer('file_size').notNull(),
+	createdAt: integer('created_at', { mode: 'timestamp_ms' })
+		.notNull()
+		.default(sql`(unixephic() * 1000)`),
+	updatedAt: integer('updated_at', { mode: 'timestamp_ms' })
+});
