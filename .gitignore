@@ -9,3 +9,4 @@ thumbs.db
 .cloudflare
 .storybook
 .chrome-debug
+dist

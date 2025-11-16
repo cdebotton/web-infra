@@ -33,4 +33,41 @@
 			"secret_name": "AUTH_JWT_SECRET",
 		},
 	],
+	"env": {
+		"staging": {
+			"name": "auth-staging",
+			"kv_namespaces": [
+				{
+					"binding": "REFRESH_TOKENS",
+					"id": "REPLACE_WITH_STAGING_REFRESH_TOKENS_KV_ID",
+				},
+				{
+					"binding": "USER_TOKENS",
+					"id": "REPLACE_WITH_STAGING_USER_TOKENS_KV_ID",
+				},
+				{
+					"binding": "TOKEN_FAMILIES",
+					"id": "REPLACE_WITH_STAGING_TOKEN_FAMILIES_KV_ID",
+				},
+			],
+			"d1_databases": [
+				{
+					"binding": "DB",
+					"database_name": "auth-staging",
+					"database_id": "REPLACE_WITH_STAGING_D1_DATABASE_ID",
+					"migrations_dir": "./drizzle",
+				},
+			],
+			"secrets_store_secrets": [
+				{
+					"binding": "AUTH_JWT_SECRET",
+					"store_id": "be063ad20bfb49e2ab8a0e1da2bc6921",
+					"secret_name": "AUTH_JWT_SECRET_STAGING",
+				},
+			],
+		},
+		"production": {
+			"name": "auth"
+		}
+	}
 }

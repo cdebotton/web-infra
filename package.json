@@ -5,13 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "debug": "pnpm run --parallel debug"
+    "debug": "pnpm run --parallel debug",
+    "build:packages": "pnpm --filter \"./packages/*\" build",
+    "dev:packages": "pnpm --filter \"./packages/*\" --parallel dev",
+    "deploy": "echo \"Error: Please specify environment with 'deploy:staging' or 'deploy:production'\" && exit 1",
+    "deploy:staging": "pnpm build:packages && pnpm --filter auth deploy -- --env staging && pnpm --filter images deploy -- --env staging && pnpm --filter admin build && pnpm --filter admin deploy -- --env staging",
+    "deploy:production": "pnpm build:packages && pnpm --filter auth deploy -- --env production && pnpm --filter images deploy -- --env production && pnpm --filter admin build && pnpm --filter admin deploy -- --env production"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.21.0",
   "devDependencies": {
-    "eslint": "^9.39.1"
+    "eslint": "^9.39.1",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
   }
 }

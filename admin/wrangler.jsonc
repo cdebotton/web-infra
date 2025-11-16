@@ -47,5 +47,50 @@
 			"bucket_name": "avatars",
 			"binding": "AVATARS_BUCKET"
 		}
-	]
+	],
+	"env": {
+		"staging": {
+			"name": "cdb-is-staging",
+			"d1_databases": [
+				{
+					"binding": "DB",
+					"database_name": "cdb-is-staging",
+					"database_id": "REPLACE_WITH_STAGING_D1_DATABASE_ID",
+					"migrations_dir": "./drizzle"
+				}
+			],
+			"services": [
+				{
+					"binding": "AUTH",
+					"service": "auth",
+					"environment": "staging"
+				},
+				{
+					"binding": "IMAGES",
+					"service": "images",
+					"environment": "staging"
+				}
+			],
+			"secrets_store_secrets": [
+				{
+					"binding": "AUTH_JWT_SECRET",
+					"store_id": "be063ad20bfb49e2ab8a0e1da2bc6921",
+					"secret_name": "AUTH_JWT_SECRET_STAGING"
+				}
+			],
+			"r2_buckets": [
+				{
+					"bucket_name": "documents-staging",
+					"binding": "DOCUMENTS_BUCKET"
+				},
+				{
+					"bucket_name": "avatars-staging",
+					"binding": "AVATARS_BUCKET"
+				}
+			]
+		},
+		"production": {
+			"name": "cdb-is"
+		}
+	}
 }

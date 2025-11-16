@@ -8,6 +8,7 @@ export const users = sqliteTable(
 		email: text('email').notNull().unique(),
 		firstName: text('first_name'),
 		lastName: text('last_name'),
+		avatarId: text('avatar_id').references(() => assets.id, { onDelete: 'set null' }),
 		displayName: text('display_name').notNull(),
 		createdAt: integer('created_at', { mode: 'timestamp_ms' })
 			.notNull()

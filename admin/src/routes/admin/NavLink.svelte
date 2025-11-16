@@ -32,11 +32,9 @@
 		align-items: center;
 		border-bottom: 1px solid var(--color-bg);
 		font-size: var(--type-scale-sm);
-		gap: 0 1rem;
-		grid-template-columns: max-content auto;
+		grid-column: 1 / span 2;
+		grid-template-columns: subgrid;
 		letter-spacing: 0.0125rem;
-		padding-block: 0.5rem;
-		padding-inline: 2rem 3rem;
 
 		&[aria-current='page'] {
 			position: relative;
@@ -45,7 +43,7 @@
 
 			&::after {
 				position: absolute;
-				right: 1rem;
+				right: -1rem;
 				display: block;
 				width: 0.4275rem;
 				height: 1.25rem;

@@ -15,7 +15,21 @@
 			"bucket_name": "images",
 			"binding": "IMAGES"
 		}
-	]
+	],
+	"env": {
+		"staging": {
+			"name": "images-staging",
+			"r2_buckets": [
+				{
+					"bucket_name": "images-staging",
+					"binding": "IMAGES"
+				}
+			]
+		},
+		"production": {
+			"name": "images"
+		}
+	}
 	/**
 	 * Smart Placement
 	 * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
