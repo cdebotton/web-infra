@@ -24,6 +24,20 @@
       ],
       "cwd": "${workspaceFolder}/src",
       "skipFiles": ["${workspaceFolder}/node_modules/**/*.js"]
+    },
+    {
+      "name": "share",
+      "type": "pwa-node",
+      "request": "attach",
+      "port": 9230,
+      "cwd": "${workspaceFolder}/share/src",
+      "sourceMaps": true,
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/**",
+        "!**/node_modules/**"
+      ],
+      "cwd": "${workspaceFolder}/src",
+      "skipFiles": ["${workspaceFolder}/node_modules/**/*.js"]
     }
   ]
 }

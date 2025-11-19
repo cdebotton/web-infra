@@ -15,7 +15,7 @@ const config = {
 		adapter: adapter({
 			platformProxy: {
 				persist: {
-					path: '../.wrangler/state/v3'
+					path: '../../.wrangler/state/v3'
 				}
 			}
 		}),
