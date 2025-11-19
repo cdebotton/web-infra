@@ -233,6 +233,10 @@ importers:
         version: 4.49.0
 
   apps/share:
+    dependencies:
+      modern-normalize:
+        specifier: ^3.0.1
+        version: 3.0.1
     devDependencies:
       '@eslint/compat':
         specifier: ^2.0.0

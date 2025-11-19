@@ -1,0 +1,66 @@
+@import 'modern-normalize';
+
+* {
+	margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		interpolate-size: allow-keywords;
+		transition-behavior: allow-discrete;
+	}
+}
+
+html {
+	color-scheme: dark light; /* Default dark */
+	hanging-punctuation: first last; /* Not supported in Chrome */
+	scrollbar-gutter: stable;
+}
+
+body {
+	min-height: 100vh;
+	font-family: var(--font-sans);
+	-webkit-font-smoothing: antialiased;
+	line-height: 1.5;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+
+p {
+	text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-serif);
+	text-wrap: balance;
+}
+
+
