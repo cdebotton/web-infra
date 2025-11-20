@@ -17,15 +17,20 @@
 		"db:studio": "LOCAL_DB_PATH=$(find ../../.wrangler/state/v3/d1/miniflare-D1DatabaseObject -type f -name '*.sqlite' -print -quit) drizzle-kit studio",
 		"debug": "NODE_OPTIONS=\"--inspect-wait=9230\" vite dev",
 		"format": "prettier --write .",
+		"types": "wrangler types ./src/worker-configuration.d.ts -c ./wrangler.jsonc -c ../../services/auth/wrangler.jsonc",
 		"lint": "prettier --check . && eslint ."
 	},
 	"devDependencies": {
 		"@eslint/compat": "^2.0.0",
 		"@eslint/js": "^9.38.0",
+		"@fontsource-variable/noto-sans": "^5.2.10",
+		"@fontsource-variable/noto-sans-mono": "^5.2.10",
+		"@fontsource-variable/noto-serif": "^5.2.9",
 		"@sveltejs/adapter-cloudflare": "^7.2.4",
 		"@sveltejs/kit": "^2.47.1",
 		"@sveltejs/vite-plugin-svelte": "^6.2.1",
 		"@types/node": "^24.10.1",
+		"drizzle-kit": "^0.31.7",
 		"eslint": "^9.38.0",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-import": "^2.32.0",
@@ -47,6 +52,11 @@
 		"vite-plugin-devtools-json": "^1.0.0"
 	},
 	"dependencies": {
-		"modern-normalize": "^3.0.1"
+		"@cdb/auth": "workspace:*",
+		"@cdb/id": "workspace:*",
+		"@cdb/jwt": "workspace:*",
+		"drizzle-orm": "^0.44.7",
+		"modern-normalize": "^3.0.1",
+		"valibot": "^1.1.0"
 	}
 }

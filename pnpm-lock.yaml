@@ -234,9 +234,24 @@ importers:
 
   apps/share:
     dependencies:
+      '@cdb/auth':
+        specifier: workspace:*
+        version: link:../../services/auth
+      '@cdb/id':
+        specifier: workspace:*
+        version: link:../../packages/id
+      '@cdb/jwt':
+        specifier: workspace:*
+        version: link:../../packages/jwt
+      drizzle-orm:
+        specifier: ^0.44.7
+        version: 0.44.7(@libsql/client@0.15.15)
       modern-normalize:
         specifier: ^3.0.1
         version: 3.0.1
+      valibot:
+        specifier: ^1.1.0
+        version: 1.1.0(typescript@5.9.3)
     devDependencies:
       '@eslint/compat':
         specifier: ^2.0.0
@@ -244,6 +259,15 @@ importers:
       '@eslint/js':
         specifier: ^9.38.0
         version: 9.39.1
+      '@fontsource-variable/noto-sans':
+        specifier: ^5.2.10
+        version: 5.2.10
+      '@fontsource-variable/noto-sans-mono':
+        specifier: ^5.2.10
+        version: 5.2.10
+      '@fontsource-variable/noto-serif':
+        specifier: ^5.2.9
+        version: 5.2.9
       '@sveltejs/adapter-cloudflare':
         specifier: ^7.2.4
         version: 7.2.4(@sveltejs/kit@2.48.5(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.43.12)(vite@7.2.2(@types/node@24.10.1)(sass@1.94.0)))(svelte@5.43.12)(vite@7.2.2(@types/node@24.10.1)(sass@1.94.0)))(wrangler@4.49.0)
@@ -256,6 +280,9 @@ importers:
       '@types/node':
         specifier: ^24.10.1
         version: 24.10.1
+      drizzle-kit:
+        specifier: ^0.31.7
+        version: 0.31.7
       eslint:
         specifier: ^9.38.0
         version: 9.39.1(supports-color@7.2.0)
@@ -1155,6 +1182,15 @@ packages:
 
   '@floating-ui/utils@0.2.10':
     resolution: {integrity: sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ==}
+
+  '@fontsource-variable/noto-sans-mono@5.2.10':
+    resolution: {integrity: sha512-N8w7TRt24aD17P4eV9GDNiV4M5FSbeZ91dfWPtlTi5EvH15KAyjGiC7rvXnG3VTo/nb6gQuIXNlTDgH3cz652g==}
+
+  '@fontsource-variable/noto-sans@5.2.10':
+    resolution: {integrity: sha512-wyFgKkFu7jki5kEL8qv7avjQ8rxHX0J/nhLWvbR9T0hOH1HRKZEvb9EW9lMjZfWHHfEzKkYf5J+NadwgCS7TXA==}
+
+  '@fontsource-variable/noto-serif@5.2.9':
+    resolution: {integrity: sha512-9McZzWeOjD/Gsko+w6A2lpGlHXZw5J2JmxaSMgopiIHoMYI1m6DAyFrzG9QQ0WjdWxj5jZfKM0EGSBVZHC6+nw==}
 
   '@fontsource/battambang@5.2.8':
     resolution: {integrity: sha512-WEwpyZJAQRNIWr6JJcTgaBxk8k7XHfqeXtt9p/FA5Ve3QziLy54eG7I2ncB4VIBwB5cPTgTO+mPt/S1MHbptEg==}
@@ -5246,6 +5282,12 @@ snapshots:
       '@floating-ui/utils': 0.2.10
 
   '@floating-ui/utils@0.2.10': {}
+
+  '@fontsource-variable/noto-sans-mono@5.2.10': {}
+
+  '@fontsource-variable/noto-sans@5.2.10': {}
+
+  '@fontsource-variable/noto-serif@5.2.9': {}
 
   '@fontsource/battambang@5.2.8': {}
 

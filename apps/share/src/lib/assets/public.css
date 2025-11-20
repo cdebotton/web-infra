@@ -1,4 +1,4 @@
-@import '$lib/reset.css';
+@import './reset.css';
 
 body {
 	-webkit-font-smoothing: antialiased;

@@ -1,0 +1,51 @@
+@import './reset.css';
+@import '@fontsource-variable/noto-sans';
+@import '@fontsource-variable/noto-sans-mono';
+@import '@fontsource-variable/noto-serif';
+
+:root {
+	color-scheme: light dark;
+
+	--type-scale-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+	--type-scale-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+	--type-scale-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+	--type-scale-md: clamp(1.125rem, 1rem + 0.625vw, 1.333rem);
+	--type-scale-lg: clamp(1.333rem, 1.2rem + 0.665vw, 1.5rem);
+	--type-scale-xl: clamp(1.5rem, 1.35rem + 0.75vw, 1.777rem);
+	--type-scale-2xl: clamp(1.777rem, 1.6rem + 0.885vw, 2rem);
+	--type-scale-3xl: clamp(2rem, 1.8rem + 1vw, 2.369rem);
+	--type-scale-4xl: clamp(2.369rem, 2.1rem + 1.345vw, 2.827rem);
+	--type-scale-5xl: clamp(2.827rem, 2.5rem + 1.635vw, 3.157rem);
+
+	--color-bg-light: #fff;
+	--color-bg-dark: oklch(4.3% 0.085 212deg);
+	--color-bg: light-dark(var(--color-bg-light), var(--color-bg-dark));
+
+	--color-surface-light: #eee;
+	--color-surface-dark: oklch(12.5% 0.085 212deg);
+	--color-surface: light-dark(var(--color-surface-light), var(--color-surface-dark));
+
+	--color-border-light: #eee;
+	--color-border-dark: oklch(18.5% 0.085 212deg);
+	--color-border: light-dark(var(--color-border-light), var(--color-border-dark));
+
+	--color-text-light: #000;
+	--color-text-dark: oklch(88.2% 0.0082 32deg);
+	--color-text: light-dark(var(--color-text-light), var(--color-text-dark));
+
+	--color-primary-surface: light-dark(#000, oklch(92% 0.0125 212deg));
+	--color-primary-text: light-dark(#fff, #000);
+
+	--font-sans: 'Noto Sans Variable', sans-serif;
+	--font-serif: 'Noto Serif Variable', serif;
+	--font-mono: 'Noto Sans Mono Variable', mono;
+}
+
+body {
+	background-color: var(--color-bg);
+	color: var(--color-text);
+	font-family: var(--font-sans);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
