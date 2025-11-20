@@ -17,9 +17,9 @@ export default defineConfig(
 				dialect: 'sqlite',
 				driver: 'd1-http',
 				dbCredentials: {
-          accountId: v.parse(v.string(), process.env.DATABASE_ACCOUNT_ID),
-          databaseId: v.parse(v.string(), process.env.DATABASE_ID),
-          token: v.parse(v.string(), process.env.DATABASE_TOKEN),
+					accountId: v.parse(v.string(), process.env.DATABASE_ACCOUNT_ID),
+					databaseId: v.parse(v.string(), process.env.DATABASE_ID),
+					token: v.parse(v.string(), process.env.DATABASE_TOKEN)
 				},
 				verbose: true,
 				strict: true

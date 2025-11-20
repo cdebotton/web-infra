@@ -67,7 +67,7 @@
 			],
 		},
 		"production": {
-			"name": "auth"
+			"name": "auth",
 		}
 	}
 }

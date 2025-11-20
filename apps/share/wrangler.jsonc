@@ -34,7 +34,8 @@
 		{
 			"binding": "DB",
 			"database_name": "cdb-share",
-			"database_id": "73978012-63ac-48ed-adca-d9bade51366e"
+			"database_id": "73978012-63ac-48ed-adca-d9bade51366e",
+			"migrations_dir": "./drizzle"
 		}
 	],
 	"r2_buckets": [

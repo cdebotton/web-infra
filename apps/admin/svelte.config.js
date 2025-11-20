@@ -14,9 +14,7 @@ const config = {
 	kit: {
 		adapter: adapter({
 			platformProxy: {
-				persist: {
-					path: '../../.wrangler/state/v3'
-				}
+				persist: true
 			}
 		}),
 		experimental: {

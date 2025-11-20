@@ -5,26 +5,26 @@
 	"main": "src/index.ts",
 	"scripts": {
 		"deploy": "wrangler deploy",
-		"dev": "wrangler dev --name=auth --persist-to=../../.wrangler/state",
+		"dev": "wrangler dev --name=auth",
 		"debug": "pnpm dev",
 		"start": "wrangler dev",
 		"test": "vitest",
 		"cf-typegen": "wrangler types",
-		"secret:put": "wrangler secrets-store secret create be063ad20bfb49e2ab8a0e1da2bc6921 --persist-to=../../.wrangler/state",
+		"secret:put": "wrangler secrets-store secret create be063ad20bfb49e2ab8a0e1da2bc6921",
 		"db:push": "drizzle-kit push",
-		"db:migrate": "wrangler d1 migrations apply auth --local --persist-to=../../.wrangler/state",
+		"db:migrate": "wrangler d1 migrations apply auth --local",
 		"db:generate": "drizzle-kit generate",
 		"db:exec": "wrangler d1 execute cdb-is --local --command",
-		"db:studio": "LOCAL_DB_PATH=$(find ../../.wrangler/state/v3/d1/miniflare-D1DatabaseObject -type f -name '*.sqlite' -print -quit) drizzle-kit studio"
+		"db:studio": "LOCAL_DB_PATH=$(find .wrangler/state/v3/d1/miniflare-D1DatabaseObject -type f -name '*.sqlite' -print -quit) drizzle-kit studio"
 	},
 	"devDependencies": {
-		"@cloudflare/vitest-pool-workers": "^0.10.8",
+		"@cloudflare/vitest-pool-workers": "^0.10.9",
 		"@libsql/client": "^0.15.15",
 		"@types/node": "^24.10.1",
 		"drizzle-kit": "^0.31.7",
 		"typescript": "^5.5.2",
-		"vitest": "~4.0.10",
-		"wrangler": "^4.49.0"
+		"vitest": "~4.0.12",
+		"wrangler": "^4.49.1"
 	},
 	"dependencies": {
 		"@cdb/jwt": "workspace:*",
